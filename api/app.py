@@ -1,4 +1,3 @@
-from routes import *
 from flask import Flask
 from flask_cors import CORS, cross_origin
 
@@ -10,6 +9,8 @@ app.secret_key = 'changethisdata___'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 CORS(app, support_credentials=True, resources={r"/*": {"origins": "*"}})
 
+from routes import *
 
 if __name__ == "__main__":
     app.run()
+ 

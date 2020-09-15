@@ -57,7 +57,10 @@
 		methods: {
 			viewResult() {
 				let formData = new FormData();
+				let numberWatch = new Date().getUTCMilliseconds();
+				numberWatch = String(numberWatch);
 				formData.append("texte", this.texte);
+				formData.append("link", numberWatch);
 				console.log(process.env.VUE_APP_API);
 				this.loading = true;
 				axios
@@ -67,7 +70,7 @@
 						this.loading = false;
 
 						window.open(
-							process.env.VUE_APP_API + "/static/coreference.xlsx",
+							process.env.VUE_APP_API + "/static/" + numberWatch + ".xlsx",
 							"_blank"
 						);
 					})

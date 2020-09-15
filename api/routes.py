@@ -27,9 +27,10 @@ def importerTexteIdhn():
 
         # Retourner text
         texte = escape(request.form["texte"])
+        link = escape(request.form["link"])
 
         # Lancement du model
-        analyse1(texte)
+        analyse1(texte, link)
 
         # Return
         return jsonify(

@@ -1,5 +1,7 @@
 <h1 align="center">Interface pour le résolution de coréférence en français</h1>
   
+Interface Web pour l'algorithme de résolution de coréférence (https://github.com/mehdi-mirzapour/French-CRS) développé par Medhi Mirzapour (https://hal.archives-ouvertes.fr/hal-02906925). L'interface est développé et maintenu par l'équipe du laboratoire de l'IDHN.
+
 ## Project setup
 
 ```

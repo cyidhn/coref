@@ -15,4 +15,4 @@ def analyse1(texte):
     chains_generator.generate_mention_pairs(window_size=30)
     chains_generator.generate_json_mention_pairs()
     chains_generator.json_mention_pairs2dataframe(
-        save_file=True, file_path="./coreference.xlsx")
+        save_file=True, file_path="./static/coreference.xlsx")

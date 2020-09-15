@@ -7,7 +7,7 @@ def analyse1(texte, link):
         spacy_stanza_lang_model="sequoia", framework="stanza")
 
     # Lancement du model
-    model.run_spacy_pipe_lines("""à mettre en oeuvre de le protectionnisme intelligent à mettre en avant de le patriotisme économique pour donner un avantage à les entreprises françaises dans la commande publique voilà tout cela. Le patriotisme économique qui n’a jamais été mis en oeuvre le protectionnisme intelligent la défiscalisation de les heures supplémentaires la suppression de le travail détaché la baisse de les charges mais exclusivement pour les TPE PME. Il met en place un patriotisme économique un protectionnisme intelligent il dit à les constructeurs américains si vous voulez aller faire vos voitures à l ’ étranger construire une voiture à l’ étranger alors vous paierez une taxe en les réimportant à les Etats-Unis . D ’ autant que évidemment ce que fait Trump m ’ intéresse et pour cause puisqu ’ il met en place la politique que j’ appelle de mes voeux depuis très longtemps et notamment la politique de patriotisme économique de protectionnisme intelligent""")
+    model.run_spacy_pipe_lines(texte)
     model.find_mentions_in_doc()
 
     # Lancement de l'algo

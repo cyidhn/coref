@@ -18,8 +18,9 @@
 				href="https://github.com/demangejeremy/coreference-idhn"
 				target="_blank"
 				text
+				class="d-none d-sm-flex"
 			>
-				<span class="mr-2">Voir le code source</span>
+				<span class="mr-2">Code source</span>
 				<v-icon>mdi-open-in-new</v-icon>
 			</v-btn>
 		</v-app-bar>
@@ -67,7 +68,6 @@
 				window.$crisp.push(["do", "chat:show"]);
 				// Mettre le timeout si message bug non affiché
 				let view = localStorage.getItem("bugMessage");
-				console.log(view);
 				if (!view) {
 					setTimeout(this.bugMessage, 5000);
 				}

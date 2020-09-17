@@ -1,53 +1,51 @@
 <template>
-	<v-container>
-		<v-row class="text-center">
-			<v-col class="mb-4">
-				<h1 class="display-2 font-weight-bold mb-3 mt-4">
-					Système de résolution de coréférence
-				</h1>
+	<div>
+		<v-container>
+			<v-row class="text-center">
+				<v-col class="mb-4">
+					<h1 class="display-2 font-weight-bold mb-3 mt-4">
+						Système de résolution de coréférence
+					</h1>
 
-				<p class="subheading font-weight-regular">
-					Entrez votre texte et téléchargez les résultats en un clic.
-				</p>
-			</v-col>
+					<p class="subheading font-weight-regular">
+						Entrez votre texte et téléchargez les résultats en un clic.
+					</p>
+				</v-col>
 
-			<v-col class="mb-5" cols="12">
-				<v-textarea
-					v-model="texte"
-					label="Entrez votre texte ici..."
-					color="black"
-				></v-textarea>
-				<v-btn
-					v-if="!loading"
-					block
-					color="black"
-					class="white--text"
-					@click="viewResult"
-					>Valider mon texte et télécharger les résultats</v-btn
-				>
-				<v-btn v-if="loading" block color="black" class="white--text" disabled
-					>Chargement en cours... (cela peut prendre plusieurs minutes)</v-btn
-				>
-			</v-col>
-			<v-col cols="12" class="text-center mt-15">
-				<p class="mt-9">Interface Web développée par :</p>
-
-				<v-img
-					:src="require('../assets/idhn.jpeg')"
-					class="my-3"
-					contain
-					height="70"
-				/>
-			</v-col>
-		</v-row>
-	</v-container>
+				<v-col class="mb-5" cols="12">
+					<v-textarea
+						v-model="texte"
+						label="Entrez votre texte ici..."
+						color="black"
+					></v-textarea>
+					<v-btn
+						v-if="!loading"
+						block
+						color="black"
+						class="white--text"
+						@click="viewResult"
+						>Valider mon texte et télécharger les résultats</v-btn
+					>
+					<v-btn v-if="loading" block color="black" class="white--text" disabled
+						>Chargement en cours... (cela peut prendre plusieurs minutes)</v-btn
+					>
+				</v-col>
+			</v-row>
+		</v-container>
+		<Footer />
+	</div>
 </template>
 
 <script>
 	import axios from "axios";
+	import Footer from "./Footer";
 
 	export default {
 		name: "HelloWorld",
+
+		components: {
+			Footer,
+		},
 
 		data: () => ({
 			texte: "",

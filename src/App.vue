@@ -78,7 +78,7 @@
 					"message:show",
 					[
 						"text",
-						"Bonjour, n'hésitez pas à nous signaler le moindre bug afin que nous corrigeons cela au plus vite. Merci :)",
+						"Bonjour, n'hésitez pas à nous signaler le moindre bug afin de corriger cela au plus vite. Merci :)",
 					],
 				]);
 				localStorage.setItem("bugMessage", true);

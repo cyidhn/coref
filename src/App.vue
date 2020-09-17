@@ -65,6 +65,23 @@
 				this.loading = false;
 				// Remettre le bandeau Crisp
 				window.$crisp.push(["do", "chat:show"]);
+				// Mettre le timeout si message bug non affiché
+				let view = localStorage.getItem("bugMessage");
+				console.log(view);
+				if (!view) {
+					setTimeout(this.bugMessage, 5000);
+				}
+			},
+			bugMessage() {
+				window.$crisp.push([
+					"do",
+					"message:show",
+					[
+						"text",
+						"Bonjour, n'hésitez pas à nous signaler le moindre bug afin que nous corrigeons cela au plus vite. Merci :)",
+					],
+				]);
+				localStorage.setItem("bugMessage", true);
 			},
 		},
 	};

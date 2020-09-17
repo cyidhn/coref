@@ -12,12 +12,14 @@
 					</p>
 				</v-col>
 
-				<v-col class="mb-5" cols="12">
+				<v-col cols="12">
 					<v-textarea
 						v-model="texte"
 						label="Entrez votre texte ici..."
 						color="black"
 					></v-textarea>
+				</v-col>
+				<v-col class="mb-10" cols="12">
 					<v-btn
 						v-if="!loading"
 						block

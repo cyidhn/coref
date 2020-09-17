@@ -1,5 +1,5 @@
 <template>
-	<v-app>
+	<v-app v-if="!loading">
 		<v-app-bar app color="primary" dark>
 			<div class="d-flex align-center">
 				<h2>Coréférence</h2>
@@ -21,20 +21,44 @@
 			<HelloWorld />
 		</v-main>
 	</v-app>
+	<v-app v-else>
+		<v-main>
+			<Loading />
+		</v-main>
+	</v-app>
 </template>
 
 <script>
 	import HelloWorld from "./components/HelloWorld";
+	import Loading from "./components/Loading";
 
 	export default {
 		name: "App",
 
 		components: {
 			HelloWorld,
+			Loading,
 		},
 
 		data: () => ({
-			//
+			// loading
+			loading: true,
 		}),
+
+		created() {
+			// Enlever Crisp bandeau
+			window.$crisp.push(["do", "chat:hide"]);
+			// Mettre le timeout
+			setTimeout(this.begin, 3000);
+		},
+
+		methods: {
+			begin() {
+				// Fermer le loading
+				this.loading = false;
+				// Remettre le bandeau Crisp
+				window.$crisp.push(["do", "chat:show"]);
+			},
+		},
 	};
 </script>

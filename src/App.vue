@@ -1,8 +1,15 @@
 <template>
 	<v-app v-if="!loading">
-		<v-app-bar app color="primary" dark>
-			<div class="d-flex align-center">
-				<h2>Coréférence</h2>
+		<v-app-bar app color="white">
+			<div class="text-left">
+				<a href="/">
+					<v-img
+						:src="require('./assets/logo.png')"
+						class="pos-img"
+						contain
+						width="150"
+					/>
+				</a>
 			</div>
 
 			<v-spacer></v-spacer>

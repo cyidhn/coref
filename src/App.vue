@@ -33,7 +33,7 @@
 					De nouvelles fonctionnalités sont prévues dans les jours à venir.
 				</v-alert>
 			</a>
-			<HelloWorld />
+			<router-view />
 		</v-main>
 	</v-app>
 	<v-app v-else>
@@ -44,14 +44,12 @@
 </template>
 
 <script>
-	import HelloWorld from "./components/HelloWorld";
 	import Loading from "./components/Loading";
 
 	export default {
 		name: "App",
 
 		components: {
-			HelloWorld,
 			Loading,
 		},
 

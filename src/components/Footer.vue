@@ -6,21 +6,21 @@
     -->
 	<v-container class="mt-15 board">
 		<v-row>
-			<v-col class="text-left col-md-6">
+			<v-col class="text-center col-md-12">
 				<a
 					href="https://www.u-cergy.fr/fr/laboratoires/idhn.html"
 					target="_blank"
 				>
 					<v-img
-						:src="require('../assets/idhn.jpeg')"
+						:src="require('../assets/LogoCY.png')"
 						class="my-3"
 						contain
-						width="100"
+						height="50"
 					/>
 				</a>
 			</v-col>
-			<v-col class="text-right col-md-6 pt-5">
-				<p>
+			<v-col class="text-center col-md-12 pt-5">
+				<p class="font-weight-bold">
 					© Laboratoire IDHN - 2020
 				</p>
 				<p>
@@ -36,7 +36,7 @@
 
 <style scoped>
 	.board {
-		border-top: 2px solid black;
+		border-top: 5px solid black;
 	}
 
 	a {

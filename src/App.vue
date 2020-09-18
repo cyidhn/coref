@@ -15,7 +15,7 @@
 			<v-spacer></v-spacer>
 
 			<v-btn
-				href="https://github.com/demangejeremy/coreference-idhn"
+				href="https://github.com/demangejeremy/coref"
 				target="_blank"
 				text
 				class="d-none d-sm-flex"

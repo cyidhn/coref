@@ -1,5 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+	<div class="about">
+		<h1>Oups, la page est en cours de construction...</h1>
+		<p>Revenez plus tard !</p>
+	</div>
 </template>

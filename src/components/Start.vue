@@ -24,7 +24,7 @@
 							<v-divider></v-divider>
 
 							<v-stepper-step color="warning" step="3"
-								>Téléchargement des résultats</v-stepper-step
+								>Visualiser les résultats</v-stepper-step
 							>
 						</v-stepper-header>
 
@@ -51,11 +51,19 @@
 								>
 									Continuer
 								</v-btn>
+								<v-btn
+									class="mt-2"
+									block
+									color="black white--text"
+									@click="e1++"
+								>
+									Saisir directement un texte
+								</v-btn>
 							</v-stepper-content>
 
 							<v-stepper-content step="2">
 								<h3 class="mb-3">
-									Vérifier et corriger votre texte
+									Visualiser les résultats
 								</h3>
 								<v-textarea
 									v-model="texte"
@@ -68,7 +76,7 @@
 									color="warning"
 									class="white--text"
 									@click="viewResult"
-									>Valider mon texte et télécharger les résultats</v-btn
+									>Valider mon texte et visualiser les résultats</v-btn
 								>
 								<v-btn
 									v-if="loading"
@@ -76,6 +84,11 @@
 									color="black"
 									class="white--text"
 									disabled
+								>
+									<v-progress-circular
+										indeterminate
+										color="black"
+									></v-progress-circular
 									>Chargement en cours... (cela peut prendre plusieurs
 									minutes)</v-btn
 								>

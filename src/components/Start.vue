@@ -118,6 +118,9 @@
 <script>
 	import axios from "axios";
 
+	// Test
+	const excelToJson = require("convert-excel-to-json");
+
 	export default {
 		name: "HelloWorld",
 
@@ -164,10 +167,17 @@
 						console.log(response.data);
 						this.loading = false;
 
-						window.open(
-							process.env.VUE_APP_API + "/static/" + numberWatch + ".xlsx",
-							"_blank"
-						);
+						// window.open(
+						// 	process.env.VUE_APP_API + "/static/" + numberWatch + ".xlsx",
+						// 	"_blank"
+						// );
+
+						const result = excelToJson({
+							sourceFile:
+								process.env.VUE_APP_API + "/static/" + numberWatch + ".xlsx",
+						});
+
+						console.log(result);
 					})
 					.catch((e) => {
 						this.getError = true;

@@ -40,8 +40,6 @@ def importerTexteIdhn():
             d = json.load(f)
             myData = d
 
-        print(myData)
-
         # Return
         return jsonify(
             link="/static/coreference.xlsx",

@@ -29,6 +29,7 @@ def importerTexteIdhn():
 
         # Retourner text
         texte = escape(request.form["texte"])
+        name = escape(request.form["name"])
         link = escape(request.form["link"])
 
         # Lancement du model
@@ -42,7 +43,8 @@ def importerTexteIdhn():
 
         # Return
         return jsonify(
-            link="/static/coreference.xlsx",
+            link=link,
+            name=name,
             data=myData
         )
         # return name_return, 201
@@ -56,7 +58,7 @@ def visuTexteIdhn():
     if request.method == 'POST':
 
         # Retourner text
-        titre = escape(request.form["titre"])
+        name = escape(request.form["name"])
         link = escape(request.form["link"])
 
         # Lancement du model
@@ -71,7 +73,7 @@ def visuTexteIdhn():
 
         # Return
         return jsonify(
-            titre=titre,
+            name=name,
             data=myData
         )
         # return name_return, 201

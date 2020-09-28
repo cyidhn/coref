@@ -35,6 +35,13 @@
 										Importer un fichier texte (en format classique ou en format
 										Iramuteq)
 									</h3>
+									<v-text-field
+										label="Nom de votre projet"
+										class="mb-3"
+										v-model="projectName"
+										color="black"
+										filled
+									></v-text-field>
 									<v-file-input
 										accept=".txt"
 										label="Importer un fichier texte"
@@ -78,6 +85,14 @@
 									@click="viewResult"
 									>Valider mon texte et visualiser les résultats</v-btn
 								>
+								<v-btn
+									class="mt-2"
+									block
+									color="black white--text"
+									@click="e1--"
+								>
+									← Retour
+								</v-btn>
 								<v-btn
 									v-if="loading"
 									block
@@ -129,6 +144,7 @@
 
 		data: () => ({
 			texte: "",
+			projectName: "",
 			loading: false,
 			fileText: null,
 			e1: 1,
@@ -159,6 +175,7 @@
 				let numberWatch = new Date().getUTCMilliseconds();
 				numberWatch = String(numberWatch);
 				formData.append("texte", this.texte);
+				formData.append("name", this.projectName);
 				formData.append("link", numberWatch);
 				console.log(process.env.VUE_APP_API);
 				this.loading = true;

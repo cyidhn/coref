@@ -1,14 +1,14 @@
 <template>
 	<div>
 		<v-container>
-			<p>Texte...</p>
+			<p>Dashboard...</p>
 		</v-container>
 	</div>
 </template>
 
 <script>
 	export default {
-		name: "VisualiseText",
+		name: "VisualiseDash",
 
 		components: {},
 

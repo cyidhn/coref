@@ -42,19 +42,14 @@
 				</v-col>
 			</v-row>
 		</v-container>
-		<Footer />
 	</div>
 </template>
 
 <script>
-	import Footer from "./Footer";
-
 	export default {
 		name: "HelloWorld",
 
-		components: {
-			Footer,
-		},
+		components: {},
 
 		data: () => ({
 			texte: "",

@@ -35,6 +35,7 @@
 			</a>
 			<router-view />
 		</v-main>
+		<Footer />
 	</v-app>
 	<v-app v-else>
 		<v-main>
@@ -45,12 +46,14 @@
 
 <script>
 	import Loading from "./components/Loading";
+	import Footer from "./components/Footer";
 
 	export default {
 		name: "App",
 
 		components: {
 			Loading,
+			Footer,
 		},
 
 		data: () => ({

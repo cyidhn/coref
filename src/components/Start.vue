@@ -112,20 +112,16 @@
 				</v-col>
 			</v-row>
 		</v-container>
-		<Footer />
 	</div>
 </template>
 
 <script>
 	import axios from "axios";
-	import Footer from "./Footer";
 
 	export default {
 		name: "HelloWorld",
 
-		components: {
-			Footer,
-		},
+		components: {},
 
 		data: () => ({
 			texte: "",

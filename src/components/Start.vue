@@ -31,21 +31,21 @@
 						<v-stepper-items>
 							<v-stepper-content step="1">
 								<template>
-									<h3 class="mb-3">
+									<h3 class="mb-8">
 										Importer un fichier texte (en format classique ou en format
 										Iramuteq)
 									</h3>
 									<v-text-field
 										label="Nom de votre projet"
-										class="mb-3"
 										v-model="projectName"
 										color="black"
-										filled
+										outlined
 									></v-text-field>
 									<v-file-input
 										accept=".txt"
 										label="Importer un fichier texte"
 										color="black"
+										outlined
 										v-model="fileText"
 									></v-file-input>
 								</template>
@@ -54,7 +54,7 @@
 									block
 									color="warning"
 									@click="toImportText"
-									:disabled="!fileText"
+									:disabled="!fileText || !projectName"
 								>
 									Continuer
 								</v-btn>
@@ -63,19 +63,21 @@
 									block
 									color="black white--text"
 									@click="e1++"
+									:disabled="!projectName"
 								>
 									Saisir directement un texte
 								</v-btn>
 							</v-stepper-content>
 
 							<v-stepper-content step="2">
-								<h3 class="mb-3">
-									Visualiser les résultats
+								<h3 class="mb-8">
+									Confirmer le texte saisi ou entrer un texte
 								</h3>
 								<v-textarea
 									v-model="texte"
 									label="Entrez votre texte ici..."
 									color="black"
+									outlined
 								></v-textarea>
 								<v-btn
 									v-if="!loading"
@@ -83,6 +85,7 @@
 									color="warning"
 									class="white--text"
 									@click="viewResult"
+									:disabled="!texte"
 									>Valider mon texte et visualiser les résultats</v-btn
 								>
 								<v-btn
@@ -93,34 +96,19 @@
 								>
 									← Retour
 								</v-btn>
-								<v-btn
-									v-if="loading"
-									block
-									color="black"
-									class="white--text"
-									disabled
-								>
-									<v-progress-circular
-										indeterminate
-										color="black"
-									></v-progress-circular
-									>Chargement en cours... (cela peut prendre plusieurs
-									minutes)</v-btn
-								>
 							</v-stepper-content>
 
 							<v-stepper-content step="3">
-								<v-card
-									class="mb-12"
-									color="grey lighten-1"
-									height="200px"
-								></v-card>
-
-								<v-btn color="primary" @click="e1 = 1">
-									Continue
-								</v-btn>
-
-								<v-btn text>Cancel</v-btn>
+								<p class="mt-5 mb-5">
+									Chargement en cours, cela peut prendre plusieurs minutes...
+								</p>
+								<v-progress-linear
+									class="mb-5"
+									indeterminate
+									color="black"
+									rounded
+									height="6"
+								></v-progress-linear>
 							</v-stepper-content>
 						</v-stepper-items>
 					</v-stepper>
@@ -171,6 +159,7 @@
 				this.e1 += 1;
 			},
 			viewResult() {
+				this.e1 += 1;
 				let formData = new FormData();
 				let numberWatch = new Date().getUTCMilliseconds();
 				numberWatch = String(numberWatch);

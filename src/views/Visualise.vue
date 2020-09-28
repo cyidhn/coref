@@ -1,17 +1,17 @@
 <template>
-	<div class="start">
-		<Start />
+	<div class="visualise-tab">
+		<VisualiseTab />
 	</div>
 </template>
 
 <script>
 	// @ is an alias to /src
-	import Start from "@/components/Start.vue";
+	import VisualiseTab from "@/components/VisualiseTab.vue";
 
 	export default {
 		name: "Home",
 		components: {
-			Start,
+			VisualiseTab,
 		},
 	};
 </script>

@@ -184,6 +184,19 @@
 						});
 						localStorage.setItem("folders", JSON.stringify(oldFolders));
 
+						// Ajout du texte
+						let newFolder = {
+							name: response.data.name,
+							text: theTexte,
+						};
+						localStorage.setItem(response.data.link, JSON.stringify(newFolder));
+
+						// Aller à la visu
+						this.$router.push({
+							name: "Visualise",
+							params: { id: response.data.link },
+						});
+
 						// window.open(
 						// 	process.env.VUE_APP_API + "/static/" + numberWatch + ".xlsx",
 						// 	"_blank"

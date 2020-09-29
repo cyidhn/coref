@@ -20,7 +20,7 @@
 									class="mt-5"
 									block
 									color="warning white--text"
-									@click="view(item.link)"
+									@click="viewDash(item)"
 								>
 									Voir l'analyse de coréférence pour ce texte
 								</v-btn>
@@ -53,9 +53,8 @@
 		},
 
 		methods: {
-			view(link) {
-				console.log(link);
-				this.$router.push("start");
+			viewDash(item) {
+				this.$router.push({ name: "Visualise", params: { id: item.link } });
 			},
 		},
 	};

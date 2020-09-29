@@ -1,7 +1,53 @@
 <template>
 	<div>
 		<v-container>
-			<p>Dashboard...</p>
+			<v-row>
+				<v-col class="col-md-3">
+					<v-card color="#385F73" dark>
+						<v-card-title class="headline">
+							133
+						</v-card-title>
+
+						<v-card-subtitle>Nombre de mots</v-card-subtitle>
+					</v-card>
+				</v-col>
+				<v-col class="col-md-3">
+					<v-card color="#385F73" dark>
+						<v-card-title class="headline">
+							133
+						</v-card-title>
+
+						<v-card-subtitle>Nombre de mots</v-card-subtitle>
+					</v-card>
+				</v-col>
+				<v-col class="col-md-3">
+					<v-card color="#385F73" dark>
+						<v-card-title class="headline">
+							133
+						</v-card-title>
+
+						<v-card-subtitle>Nombre de mots</v-card-subtitle>
+					</v-card>
+				</v-col>
+				<v-col class="col-md-3">
+					<v-card color="#385F73" dark>
+						<v-card-title class="headline">
+							133
+						</v-card-title>
+
+						<v-card-subtitle>Nombre de mots</v-card-subtitle>
+					</v-card>
+				</v-col>
+				<v-col class="col-md-12">
+					<v-card color="#385F73" dark>
+						<v-card-title class="headline">
+							133
+						</v-card-title>
+
+						<v-card-subtitle>Nombre de mots</v-card-subtitle>
+					</v-card>
+				</v-col>
+			</v-row>
 		</v-container>
 	</div>
 </template>

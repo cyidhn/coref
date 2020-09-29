@@ -16,7 +16,7 @@ const routes = [
 	},
 	{
 		path: "/visualise/:id",
-		name: "Start",
+		name: "Visualise",
 		component: () => import("../views/Visualise.vue"),
 	},
 	{

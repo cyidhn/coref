@@ -162,6 +162,7 @@
 				this.e1 += 1;
 				let formData = new FormData();
 				let numberWatch = new Date().getUTCMilliseconds();
+				let theTexte = this.texte;
 				numberWatch = String(numberWatch);
 				formData.append("texte", this.texte);
 				formData.append("name", this.projectName);
@@ -173,6 +174,15 @@
 					.then((response) => {
 						console.log(response.data);
 						this.loading = false;
+
+						// Ajout items
+						let oldFolders = JSON.parse(localStorage.getItem("folders")) || [];
+						oldFolders.push({
+							name: response.data.name,
+							link: response.data.link,
+							text: theTexte,
+						});
+						localStorage.setItem("folders", JSON.stringify(oldFolders));
 
 						// window.open(
 						// 	process.env.VUE_APP_API + "/static/" + numberWatch + ".xlsx",

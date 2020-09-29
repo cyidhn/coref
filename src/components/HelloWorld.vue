@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<MyVisualise />
 		<v-container>
 			<v-row class="text-center">
 				<v-col class="mb-4">
@@ -46,10 +47,14 @@
 </template>
 
 <script>
+	import MyVisualise from "@/components/MyVisualise.vue";
+
 	export default {
 		name: "HelloWorld",
 
-		components: {},
+		components: {
+			MyVisualise,
+		},
 
 		data: () => ({
 			texte: "",

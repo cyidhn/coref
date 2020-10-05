@@ -12,10 +12,6 @@
 						</v-expansion-panel-header>
 						<v-expansion-panel-content>
 							<div>
-								<hr />
-								<TextTruncate class="mt-3">
-									{{ item.text }}
-								</TextTruncate>
 								<v-btn
 									class="mt-5"
 									block

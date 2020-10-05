@@ -180,7 +180,7 @@
 						oldFolders.push({
 							name: response.data.name,
 							link: response.data.link,
-							text: theTexte,
+							// text: theTexte,
 						});
 						localStorage.setItem("folders", JSON.stringify(oldFolders));
 

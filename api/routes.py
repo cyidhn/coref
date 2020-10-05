@@ -58,7 +58,7 @@ def visuTexteIdhn():
     if request.method == 'POST':
 
         # Retourner text
-        name = escape(request.form["name"])
+        # name = escape(request.form["name"])
         link = escape(request.form["link"])
 
         # Lancement du model
@@ -73,7 +73,6 @@ def visuTexteIdhn():
 
         # Return
         return jsonify(
-            name=name,
             data=myData
         )
         # return name_return, 201

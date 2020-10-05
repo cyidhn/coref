@@ -1,6 +1,21 @@
 <template>
 	<div class="visualise-tab">
 		<v-container>
+			<v-row class="mb-2">
+				<v-col cols="6">
+					<v-btn color="black white--text" @click="goBack">
+						← Retour
+					</v-btn>
+				</v-col>
+				<v-col cols="6" class="text-right">
+					<v-btn color="black white--text" @click="goDelete">
+						<v-icon aria-hidden="false" class="mr-2">
+							mdi-delete
+						</v-icon>
+						Supprimer
+					</v-btn>
+				</v-col>
+			</v-row>
 			<v-row class="text-center mb-2">
 				<v-col cols="12">
 					<small class="text-uppercase mb-8">Nom de votre projet</small>
@@ -45,7 +60,9 @@
 
 		data: () => ({
 			link: "dash",
-			visuDesc: null,
+			visuDesc: {
+				name: "",
+			},
 		}),
 
 		mounted() {
@@ -54,6 +71,14 @@
 		},
 
 		methods: {
+			goDelete() {
+				if (confirm("Êtes-vous sûr de supprimer ces résulats ?")) {
+					console.log("Delete");
+				}
+			},
+			goBack() {
+				this.$router.push("/");
+			},
 			toDashboard() {
 				this.link = "dash";
 			},

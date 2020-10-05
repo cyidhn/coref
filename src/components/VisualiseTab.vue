@@ -2,14 +2,29 @@
 	<div>
 		<v-container>
 			<v-row class="text-center">
-				<v-data-table
-					class="elevation-1 black--text"
-					:loading="loading"
-					:items="content"
-					:items-per-page="10"
-					:headers="headers"
-					loading-text="Chargement en cours, merci de patienter..."
-				></v-data-table>
+				<v-col cols="12" class="mb-4">
+					<v-text-field
+						v-model="search"
+						append-icon="mdi-magnify"
+						label="Search"
+						single-line
+						hide-details
+						outlined
+						color="black"
+					></v-text-field>
+				</v-col>
+
+				<v-col cols="12">
+					<v-data-table
+						class="elevation-1 black--text"
+						:loading="loading"
+						:items="content"
+						:items-per-page="10"
+						:headers="headers"
+						loading-text="Chargement en cours, merci de patienter..."
+						:search="search"
+					></v-data-table>
+				</v-col>
 			</v-row>
 		</v-container>
 	</div>
@@ -25,6 +40,7 @@
 
 		data: () => ({
 			texte: "",
+			search: "",
 			loading: true,
 			ref: null,
 			content: [],

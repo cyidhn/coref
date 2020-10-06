@@ -23,7 +23,11 @@
 						:headers="headers"
 						loading-text="Chargement en cours, merci de patienter..."
 						:search="search"
-					></v-data-table>
+					>
+						<template v-slot:[`item.Right_ID`]="{ item }">
+							<span v-html="item.Right_ID"></span>
+						</template>
+					</v-data-table>
 				</v-col>
 			</v-row>
 		</v-container>

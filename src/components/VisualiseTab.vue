@@ -27,6 +27,9 @@
 						<template v-slot:[`item.Right_ID`]="{ item }">
 							<span v-html="item.Right_ID"></span>
 						</template>
+						<template v-slot:[`item.Left_ID`]="{ item }">
+							<span v-html="item.Left_ID"></span>
+						</template>
 					</v-data-table>
 				</v-col>
 			</v-row>

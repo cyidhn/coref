@@ -60,6 +60,7 @@
 
 		data: () => ({
 			link: "dash",
+			noVisu: null,
 			visuDesc: {
 				name: "",
 			},
@@ -67,13 +68,36 @@
 
 		mounted() {
 			let noVisu = this.$route.params.id;
+			this.noVisu = noVisu;
 			this.visuDesc = JSON.parse(localStorage.getItem(noVisu));
 		},
 
 		methods: {
+			splitArr(arr, attr, value) {
+				var i = arr.length;
+				while (i--) {
+					let hasBarProperty = Object.prototype.hasOwnProperty.call(
+						arr[i],
+						attr
+					);
+					if (
+						arr[i] &&
+						hasBarProperty &&
+						arguments.length > 2 &&
+						arr[i][attr] === value
+					) {
+						arr.splice(i, 1);
+					}
+				}
+				return arr;
+			},
 			goDelete() {
 				if (confirm("Êtes-vous sûr de supprimer ces résulats ?")) {
-					console.log("Delete");
+					let list = JSON.parse(localStorage.getItem("folders"));
+					list = this.splitArr(list, "link", this.noVisu);
+					localStorage.setItem("folders", JSON.stringify(list));
+					localStorage.removeItem(this.noVisu);
+					this.$router.push("/");
 				}
 			},
 			goBack() {

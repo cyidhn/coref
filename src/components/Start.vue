@@ -78,6 +78,8 @@
 									label="Entrez votre texte ici..."
 									color="black"
 									outlined
+									counter="10000"
+									:rules="rulesText"
 								></v-textarea>
 								<v-btn
 									v-if="!loading"
@@ -85,7 +87,7 @@
 									color="warning"
 									class="white--text"
 									@click="viewResult"
-									:disabled="!texte"
+									:disabled="!texte || texte.length > 10000"
 									>Valider mon texte et visualiser les résultats</v-btn
 								>
 								<v-btn
@@ -136,6 +138,11 @@
 			loading: false,
 			fileText: null,
 			e1: 1,
+			rulesText: [
+				(v) =>
+					v.length <= 10000 ||
+					"Vous avez dépassé le nombre limite de caractères.",
+			],
 		}),
 
 		methods: {

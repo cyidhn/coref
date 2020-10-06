@@ -26,13 +26,13 @@
 		</v-app-bar>
 
 		<v-main>
-			<a href="#" @click="openChat">
+			<!-- <a href="#" @click="openChat">
 				<v-alert type="warning">
 					Actuellement en version bêta, n'hésitez pas à cliquer ici pour nous
 					faire part de vos avis, commentaires ou éventuels bugs.<br />
 					De nouvelles fonctionnalités sont prévues dans les jours à venir.
 				</v-alert>
-			</a>
+			</a> -->
 			<router-view />
 		</v-main>
 		<Footer />

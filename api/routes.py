@@ -69,8 +69,6 @@ def visuTexteIdhn():
             d = json.load(f)
             myData = d
 
-        print(myData)
-
         # Return
         return jsonify(
             data=myData

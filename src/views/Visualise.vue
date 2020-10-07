@@ -36,10 +36,10 @@
 			<VisualiseDash />
 		</div>
 		<div v-if="link === 'tab'">
-			<VisualiseTab />
+			<VisualiseTab :name="visuDesc.name" />
 		</div>
 		<div v-if="link === 'text'">
-			<VisualiseText />
+			<VisualiseText :name="visuDesc.name" />
 		</div>
 	</div>
 </template>

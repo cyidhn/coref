@@ -19,6 +19,13 @@
 						{{ texte }}
 					</text-highlight>
 				</v-col>
+
+				<v-col cols="12" class="mt-5 text-right">
+					<v-btn depressed @click="download">
+						<v-icon light class="mr-2">mdi-upload</v-icon>
+						Télécharger le texte
+					</v-btn>
+				</v-col>
 			</v-row>
 		</v-container>
 	</div>
@@ -27,6 +34,7 @@
 <script>
 	export default {
 		name: "VisualiseText",
+		props: ["name"],
 
 		components: {},
 
@@ -47,6 +55,24 @@
 		},
 
 		methods: {
+			generateDownload(filename, text) {
+				var element = document.createElement("a");
+				element.setAttribute(
+					"href",
+					"data:text/plain;charset=utf-8," + encodeURIComponent(text)
+				);
+				element.setAttribute("download", filename);
+
+				element.style.display = "none";
+				document.body.appendChild(element);
+
+				element.click();
+
+				document.body.removeChild(element);
+			},
+			download() {
+				this.generateDownload(this.name + ".txt", this.texte);
+			},
 			toStart() {
 				this.$router.push("start");
 			},

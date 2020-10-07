@@ -32,6 +32,13 @@
 						</template>
 					</v-data-table>
 				</v-col>
+
+				<v-col cols="12" class="mt-5 text-right">
+					<v-btn depressed @click="download">
+						<v-icon light class="mr-2">mdi-upload</v-icon>
+						Télécharger le résultat
+					</v-btn>
+				</v-col>
 			</v-row>
 		</v-container>
 	</div>
@@ -42,7 +49,7 @@
 
 	export default {
 		name: "VisualiseTab",
-
+		props: ["name"],
 		components: {},
 
 		data: () => ({
@@ -77,6 +84,27 @@
 		},
 
 		methods: {
+			generateDownload(filename, text) {
+				var element = document.createElement("a");
+				element.setAttribute(
+					"href",
+					"data:json/plain;charset=utf-8," + encodeURIComponent(text)
+				);
+				element.setAttribute("download", filename);
+
+				element.style.display = "none";
+				document.body.appendChild(element);
+
+				element.click();
+
+				document.body.removeChild(element);
+			},
+			download() {
+				this.generateDownload(
+					this.name + ".json",
+					JSON.stringify(this.content)
+				);
+			},
 			getJson() {
 				let formData = new FormData();
 				formData.append("link", this.ref);

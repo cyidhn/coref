@@ -28,6 +28,7 @@
 						<v-tab @click="toDashboard">Dashboard</v-tab>
 						<v-tab @click="toTab">Visualisation en Tableau</v-tab>
 						<v-tab @click="toText">Visualisation en Texte</v-tab>
+						<v-tab @click="toReine">Visualisation avec Reine</v-tab>
 					</v-tabs>
 				</v-col>
 			</v-row>
@@ -41,6 +42,9 @@
 		<div v-if="link === 'text'">
 			<VisualiseText :name="visuDesc.name" />
 		</div>
+		<div v-if="link === 'reine'">
+			<VisualiseReine :name="visuDesc.name" />
+		</div>
 	</div>
 </template>
 
@@ -48,6 +52,7 @@
 	import VisualiseDash from "@/components/VisualiseDash.vue";
 	import VisualiseTab from "@/components/VisualiseTab.vue";
 	import VisualiseText from "@/components/VisualiseText.vue";
+	import VisualiseReine from "@/components/VisualiseReine.vue";
 
 	export default {
 		name: "Home",
@@ -56,6 +61,7 @@
 			VisualiseTab,
 			VisualiseDash,
 			VisualiseText,
+			VisualiseReine,
 		},
 
 		data: () => ({
@@ -111,6 +117,9 @@
 			},
 			toText() {
 				this.link = "text";
+			},
+			toReine() {
+				this.link = "reine";
 			},
 		},
 	};

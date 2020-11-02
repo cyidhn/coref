@@ -24,7 +24,7 @@
 					© Laboratoire IDHN - 2020
 				</p>
 				<p>
-					Développé avec ❤️ par
+					Développé par
 					<a href="https://twitter.com/demangejeremy" target="_blank"
 						>@DemangeJeremy</a
 					>

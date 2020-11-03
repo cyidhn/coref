@@ -17,13 +17,12 @@ from sklearn.metrics import adjusted_rand_score
 import unidecode
 import joblib
 
+
 # Générer un HTML
-
-
 def generate_html(terms, doclink):
 
     # Lien sauvegarde
-    doclink = doclink.replace(".txt", "_classes.html")
+    doclink = "./results/" + doclink + "_class.html"
 
     # Code pour ajout
     codeAdd = """
@@ -220,7 +219,7 @@ def removeStopwords(wordlist, stopwords):
 # Appel de la fonction principale
 
 
-def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="./test/test2.txt", LEM=True, NB_ARBRES=4, NB_MOTS=10, NB_ITERATIONS=100, NB_INIT=1):
+def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="12", LEM=True, NB_ARBRES=4, NB_MOTS=10, NB_ITERATIONS=100, NB_INIT=1):
     # Exemple de mise en forme de document
     #
     # documents = ["Ceci est un premier texte de corpus.",
@@ -228,8 +227,7 @@ def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="./test/test2.txt", LEM=True, NB_
     #              "Taille de la liste sans limite"]
 
     # Document mis en forme
-    documents = []
-    documents.append(DOCUMENT_TEXT)
+    documents = DOCUMENT_TEXT.split(".")
 
     # Lire chaque texte
     newDoc = []
@@ -243,7 +241,7 @@ def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="./test/test2.txt", LEM=True, NB_
         import spacy
         # Charger le français dans spacy
         print("Chargement du dictionnaire...")
-        nlp = spacy.load('fr_core_news_md')
+        nlp = spacy.load('fr_core_news_sm')
         for d in documents:
             print(f"Lecture du corpus {str(i)} / {str(len(documents))}")
             i += 1
@@ -301,7 +299,7 @@ def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="./test/test2.txt", LEM=True, NB_
     model.fit(X)
 
     # Sauvegarder le modèle
-    joblib.dump(model, DOCUMENT_LINK.replace(".txt", "_model.sav"))
+    # joblib.dump(model, DOCUMENT_LINK + "_model.sav")
 
     # Affichage des résultats
     print("DEBUG")
@@ -332,15 +330,16 @@ def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="./test/test2.txt", LEM=True, NB_
 
     # Générer le HTML
     generate_html(saveTerms, DOCUMENT_LINK)
+    return DOCUMENT_LINK
 
     # Affichage des phrases correspondantes
-    numeroDocument = 50
-    Y = vectorizer.transform([newDoc[numeroDocument]])
-    prediction = model.predict(Y)
-    print(
-        f"La phrase suivante : '{documents[numeroDocument]}' correspond à l'arbre {str(prediction[0])}.")
+    # numeroDocument = 50
+    # Y = vectorizer.transform([newDoc[numeroDocument]])
+    # prediction = model.predict(Y)
+    # print(
+    #     f"La phrase suivante : '{documents[numeroDocument]}' correspond à l'arbre {str(prediction[0])}.")
 
 
 # Appel de la fonction
-call_reine(DOCUMENT_LINK="/Users/jeremydemange/Documents/GitHub/Reine/test/new/Iramuteq_Comptes_Academie.txt",
+call_reine(DOCUMENT_TEXT="à mettre en œuvre de le protectionnisme intelligent à mettre en avant de le patriotisme économique pour donner un avantage à les entreprises françaises dans la commande publique voilà tout cela . Le patriotisme économique qui n ’ a jamais été mis en œuvre le protectionnisme intelligent la défiscalisation de les heures supplémentaires la suppression de le travail détaché la baisse de les charges mais exclusivement pour les TPE PME . Il met en place un patriotisme économique un protectionnisme intelligent il dit à les constructeurs américains si vous voulez aller faire vos voitures à l ’ étranger construire une voiture à l’ étranger alors vous paierez une taxe en les réimportant à les Etats-Unis . D ’ autant que évidemment ce que fait Trump m ’ intéresse et pour cause puisqu ’ il met en place la politique que j’ appelle de mes vœux depuis très longtemps et notamment la politique de patriotisme économique de protectionnisme intelligent", DOCUMENT_LINK="12",
            LEM=True, NB_ARBRES=3, NB_MOTS=10, NB_ITERATIONS=1000, NB_INIT=1)

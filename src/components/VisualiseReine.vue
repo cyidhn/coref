@@ -2,6 +2,9 @@
 	<div>
 		<v-container v-if="loading">
 			<v-row class="text-center">
+				<p class="mt-5 mb-5">
+					Chargement en cours, cela peut prendre plusieurs minutes...
+				</p>
 				<v-progress-linear
 					class="mb-5"
 					indeterminate

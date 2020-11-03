@@ -18,13 +18,13 @@ import chardet
 import io
 import sys
 from beta import analyse1
+from reine import call_reine
 import excel2json
 import json
 
 
 @app.route("/importer-texte-idhn", methods=["POST"])
 def importerTexteIdhn():
-    print("Here")
     if request.method == 'POST':
 
         # Retourner text
@@ -54,7 +54,6 @@ def importerTexteIdhn():
 
 @app.route("/visu-texte-idhn", methods=["POST"])
 def visuTexteIdhn():
-    print("Here")
     if request.method == 'POST':
 
         # Retourner text
@@ -72,6 +71,28 @@ def visuTexteIdhn():
         # Return
         return jsonify(
             data=myData
+        )
+        # return name_return, 201
+
+    # return "Problem"
+
+
+@app.route("/algo-reine", methods=["POST"])
+def algoReine():
+    if request.method == 'POST':
+
+        # Retourner text
+        # name = escape(request.form["name"])
+        link = escape(request.form["link"])
+        texte = escape(request.form["texte"])
+
+        # Lancement du model
+        call_reine(DOCUMENT_TEXT=texte, DOCUMENT_LINK=link,
+                   LEM=True, NB_ARBRES=3, NB_MOTS=10, NB_ITERATIONS=1000, NB_INIT=1)
+
+        # Return
+        return jsonify(
+            data=link
         )
         # return name_return, 201
 

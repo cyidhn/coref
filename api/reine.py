@@ -22,7 +22,7 @@ import joblib
 def generate_html(terms, doclink):
 
     # Lien sauvegarde
-    doclink = "./results/" + doclink + "_class.html"
+    doclink = "./static/" + doclink + ".html"
 
     # Code pour ajout
     codeAdd = """
@@ -341,5 +341,5 @@ def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="12", LEM=True, NB_ARBRES=4, NB_M
 
 
 # Appel de la fonction
-call_reine(DOCUMENT_TEXT="à mettre en œuvre de le protectionnisme intelligent à mettre en avant de le patriotisme économique pour donner un avantage à les entreprises françaises dans la commande publique voilà tout cela . Le patriotisme économique qui n ’ a jamais été mis en œuvre le protectionnisme intelligent la défiscalisation de les heures supplémentaires la suppression de le travail détaché la baisse de les charges mais exclusivement pour les TPE PME . Il met en place un patriotisme économique un protectionnisme intelligent il dit à les constructeurs américains si vous voulez aller faire vos voitures à l ’ étranger construire une voiture à l’ étranger alors vous paierez une taxe en les réimportant à les Etats-Unis . D ’ autant que évidemment ce que fait Trump m ’ intéresse et pour cause puisqu ’ il met en place la politique que j’ appelle de mes vœux depuis très longtemps et notamment la politique de patriotisme économique de protectionnisme intelligent", DOCUMENT_LINK="12",
-           LEM=True, NB_ARBRES=3, NB_MOTS=10, NB_ITERATIONS=1000, NB_INIT=1)
+# call_reine(DOCUMENT_TEXT="à mettre en œuvre de le protectionnisme intelligent à mettre en avant de le patriotisme économique pour donner un avantage à les entreprises françaises dans la commande publique voilà tout cela . Le patriotisme économique qui n ’ a jamais été mis en œuvre le protectionnisme intelligent la défiscalisation de les heures supplémentaires la suppression de le travail détaché la baisse de les charges mais exclusivement pour les TPE PME . Il met en place un patriotisme économique un protectionnisme intelligent il dit à les constructeurs américains si vous voulez aller faire vos voitures à l ’ étranger construire une voiture à l’ étranger alors vous paierez une taxe en les réimportant à les Etats-Unis . D ’ autant que évidemment ce que fait Trump m ’ intéresse et pour cause puisqu ’ il met en place la politique que j’ appelle de mes vœux depuis très longtemps et notamment la politique de patriotisme économique de protectionnisme intelligent", DOCUMENT_LINK="12",
+#            LEM=True, NB_ARBRES=3, NB_MOTS=10, NB_ITERATIONS=1000, NB_INIT=1)

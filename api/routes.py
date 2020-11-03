@@ -83,8 +83,9 @@ def algoReine():
 
         # Retourner text
         # name = escape(request.form["name"])
-        link = escape(request.form["link"])
-        texte = escape(request.form["texte"])
+        link = str(escape(request.form["link"]))
+        texte = str(escape(request.form["texte"]))
+        print(texte)
 
         # Lancement du model
         call_reine(DOCUMENT_TEXT=texte, DOCUMENT_LINK=link,

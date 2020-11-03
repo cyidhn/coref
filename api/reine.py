@@ -176,6 +176,7 @@ def generate_html(terms, doclink):
     </style>
   </head>
   <body>
+  <center>
   <div class="tree">
     <ul>""" + codeAdd + """
 
@@ -184,6 +185,7 @@ def generate_html(terms, doclink):
       </li>
     </ul>
   </div>  
+  </center>
   </body>
   </html>
   """

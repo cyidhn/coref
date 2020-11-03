@@ -55,7 +55,7 @@
 	import VisualiseReine from "@/components/VisualiseReine.vue";
 
 	export default {
-		name: "Home",
+		name: "Visualise",
 
 		components: {
 			VisualiseTab,

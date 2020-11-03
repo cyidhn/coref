@@ -32,7 +32,7 @@
 				<v-col class="col-md-3">
 					<v-card color="#385F73" dark>
 						<v-card-title class="headline">
-							3
+							4
 						</v-card-title>
 
 						<v-card-subtitle>Visualisations disponibles</v-card-subtitle>

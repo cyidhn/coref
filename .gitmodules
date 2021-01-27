@@ -1,0 +1,3 @@
+[submodule "api/French-CRS"]
+	path = api/French-CRS
+	url = https://github.com/mehdi-mirzapour/French-CRS

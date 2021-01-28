@@ -243,7 +243,7 @@ def call_reine(DOCUMENT_TEXT="", DOCUMENT_LINK="12", LEM=True, NB_ARBRES=4, NB_M
         import spacy
         # Charger le français dans spacy
         print("Chargement du dictionnaire...")
-        nlp = spacy.load('fr_core_news_sm')
+        nlp = spacy.load('fr_core_news_lg')
         for d in documents:
             print(f"Lecture du corpus {str(i)} / {str(len(documents))}")
             i += 1

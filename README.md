@@ -32,9 +32,26 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-<br/><br/>
-<p align="center">
-  <img width="100" src="https://www.u-cergy.fr/_contents/ametys-internal%253Asites/www/ametys-internal%253Acontents/idhn-article/_metadata/illustration/image/CY%2520idhn_coul.jpg?objectId=defaultWebContent%3A%2F%2F54fe2c19-878f-4878-a875-449073922249">
-</p>
 <br/>
-<p align="center">Un projet de l'<a href="https://www.u-cergy.fr/fr/laboratoires/idhn.html" target="_blank">IDHN</a>.</p>
+## Citations
+
+```bibtex
+@inproceedings{desoyer2016coreference,
+  title={Coreference Resolution for French Oral Data: Machine Learning Experiments with ANCOR},
+  author={D{\'e}soyer, Ad{\`e}le and Landragin, Fr{\'e}d{\'e}ric and Tellier, Isabelle and Lefeuvre, Ana{\"\i}s and Antoine, Jean-Yves and Dinarelli, Marco},
+  booktitle={International Conference on Intelligent Text Processing and Computational Linguistics},
+  pages={507--519},
+  year={2016},
+  organization={Springer}
+}
+```
+
+```bibtex
+@inproceedings{muzerelle:hal-01075679,
+  TITLE = {{ANCOR\_Centre, a Large Free Spoken French Coreference Corpus:  description of the Resource and Reliability Measures}},
+  AUTHOR = {Muzerelle, Judith and Lefeuvre, Ana{\"i}s and Schang, Emmanuel and Antoine, Jean-Yves and Pelletier, Aurore and Maurel, Denis and Eshkol, Iris and Villaneau, Jeanne},
+  BOOKTITLE = {{LREC'2014, 9th Language Resources and Evaluation Conference.}},
+  PAGES = {843-847},
+  YEAR = {2014}
+}
+```

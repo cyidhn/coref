@@ -24,6 +24,12 @@
 						loading-text="Chargement en cours, merci de patienter..."
 						:search="search"
 					>
+						<template v-slot:[`item.actions`]="{ item }">
+							<v-icon small class="mr-2" @click="seeYou(item)">
+								mdi-eye
+							</v-icon>
+						</template>
+
 						<template v-slot:[`item.Right_ID`]="{ item }">
 							<span v-html="item.Right_ID"></span>
 						</template>
@@ -67,6 +73,7 @@
 				},
 				{ text: "Partie droite", value: "Right_ID" },
 				{ text: "Prédiction", value: "Prediction" },
+				{ text: "Voir", value: "actions", sortable: false },
 			],
 		}),
 
@@ -76,6 +83,7 @@
 
 			// Call analyse
 			let oldFolders = JSON.parse(localStorage.getItem(this.ref));
+			this.texte = oldFolders.text;
 			if (oldFolders.visuTab) {
 				this.loading = false;
 				this.content = oldFolders.visuTab;
@@ -85,6 +93,35 @@
 		},
 
 		methods: {
+			seeYou(item) {
+				console.log(item);
+				let gauche = item.Left_ID;
+				let droite = item.Right_ID;
+				let dist = item.DISTANCE_WORD;
+				let chars = item.DISTANCE_CHAR;
+				let texte = this.texte;
+				texte = texte.split(" ");
+				let final = "";
+				let count = 0;
+				for (let i = 0; i < texte.length; i++) {
+					let inProg = texte[i];
+					let letterCount = inProg.replace(/\s+/g, "").length;
+					if (count >= chars) {
+						if (final == "") {
+							final += gauche;
+							let lenn = final.split(" ").length;
+							i += lenn - 1;
+						} else if (chars >= 0) {
+							final += " " + inProg;
+							chars -= 1;
+						}
+					}
+					count += letterCount;
+				}
+				final += " " + droite;
+				console.log(dist);
+				console.log(final);
+			},
 			generateDownload(filename, text) {
 				var element = document.createElement("a");
 				element.setAttribute(

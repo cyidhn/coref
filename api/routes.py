@@ -21,7 +21,7 @@ from beta import analyse1
 from reine import call_reine
 import excel2json
 import json
-
+import pandas
 
 @app.route("/importer-texte-idhn", methods=["POST"])
 def importerTexteIdhn():
@@ -34,12 +34,15 @@ def importerTexteIdhn():
 
         # Lancement du model
         analyse1(texte, link)
-        excel2json.convert_from_file('./static/' + link + ".xlsx")
+        # excel2json.convert_from_file('./static/' + link + ".xlsx")
 
-        # Debug
-        with open('./static/Sheet1.json') as f:
-            d = json.load(f)
-            myData = d
+        # # Debug
+        # with open('./static/Sheet1.json') as f:
+        #     d = json.load(f)
+        #     myData = d
+        excel_data_df = pandas.read_excel('./static/' + link + ".xlsx", sheet_name='Sheet1')
+        myData = excel_data_df.to_json(orient='records')
+        myData = json.loads(myData)
 
         # Return
         return jsonify(
@@ -61,12 +64,9 @@ def visuTexteIdhn():
         link = escape(request.form["link"])
 
         # Lancement du model
-        excel2json.convert_from_file('./static/' + link + ".xlsx")
-
-        # Debug
-        with open('./static/Sheet1.json') as f:
-            d = json.load(f)
-            myData = d
+        excel_data_df = pandas.read_excel('./static/' + link + ".xlsx", sheet_name='Sheet1')
+        myData = excel_data_df.to_json(orient='records')
+        myData = json.loads(myData)
 
         # Return
         return jsonify(

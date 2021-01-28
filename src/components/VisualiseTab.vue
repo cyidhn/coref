@@ -66,6 +66,7 @@
 					value: "Left_ID",
 				},
 				{ text: "Partie droite", value: "Right_ID" },
+				{ text: "Prédiction", value: "Prediction" },
 			],
 		}),
 

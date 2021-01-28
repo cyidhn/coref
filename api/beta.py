@@ -17,3 +17,14 @@ def analyse1(texte, link):
     chains_generator.generate_json_mention_pairs()
     chains_generator.json_mention_pairs2dataframe(
         save_file=True, file_path=file_name)
+    chains_generator.init_data_model(model_name="./pre-trained/Model_ANCOR_Representative_FULL.model", 
+                                 input_method=".xlsx",
+                                 file_path=file_name,
+                                 column_outcome="Prediction",
+                                 threshold=0.5)
+    chains_generator.columns_drop_list = ["Left_ID", "Right_ID"]
+    res = chains_generator.apply_model_to_dataset()
+    res.to_excel(file_name)  
+    print(file_name)  
+    # chains_generator.json_mention_pairs2dataframe(
+    #     save_file=True, file_path=file_name)

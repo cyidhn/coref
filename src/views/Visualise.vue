@@ -18,7 +18,6 @@
 			</v-row>
 			<v-row class="text-center mb-2">
 				<v-col cols="12">
-					<small class="text-uppercase mb-8">Nom de votre projet</small>
 					<h1 class="text-uppercase">{{ visuDesc.name }}</h1>
 				</v-col>
 			</v-row>

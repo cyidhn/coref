@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api:
+    build:
+        dockerfile: Dockerfile
+        context: ./api
+    restart: always
+    ports:
+      - "5000:5000"
+    
+  app:
+    build:
+        dockerfile: Dockerfile
+        context: .
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      VUE_APP_API: http://localhost:5000

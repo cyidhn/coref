@@ -3,6 +3,11 @@
  
 Interface Web pour l'algorithme de résolution de coréférence (https://github.com/mehdi-mirzapour/French-CRS) développé par Medhi Mirzapour (https://hal.archives-ouvertes.fr/hal-02906925). L'interface est développée et maintenue par l'équipe du laboratoire de l'IDHN.
 
+### Download project 
+
+```
+git clone --recurse-submodules https://github.com/demangejeremy/coref.git
+```
 
 ## Project setup
 

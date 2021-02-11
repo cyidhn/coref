@@ -9,10 +9,28 @@ Interface Web pour l'algorithme de résolution de coréférence (https://github.
 git clone --recurse-submodules https://github.com/demangejeremy/coref.git
 ```
 
-## Project setup
+### Project setup
 
 ```
 npm install
+```
+
+```
+virtualenv -p python3 env
+```
+
+```
+source env/bin/activate
+```
+
+```
+cd ./api && pip install -r requirements.txt && cd ./French-CRS && pip install -e . && python -m spacy download fr_core_news_md && cd ../../
+```
+
+
+```
+python ./api/app.py & npm run serve &
+
 ```
 
 ### Compiles and hot-reloads for development

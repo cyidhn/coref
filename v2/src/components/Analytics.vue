@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div>
+            <Nothing />
+        </div>
         <div v-if="menuChange == 'pred'">
             <p>Hello</p>
         </div>
@@ -7,7 +10,13 @@
 </template>
 
 <script>
+import Nothing from "./Nothing.vue";
+
 export default {
+    components: {
+        Nothing
+    },
+
     computed: {
       menuChange() {
         return this.$store.getters.menuChoice;

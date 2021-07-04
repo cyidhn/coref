@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full fixed">
+  <div class="w-max fixed">
     <Listbox v-model="selectedPerson">
       <div class="relative mt-1">
         <ListboxButton
@@ -78,7 +78,7 @@ export default {
 
   setup() {
     const people = [
-      { name: 'French Coreference Resolution System (Mehdi Mirzapour)' },
+      { name: 'French-CRS (Mehdi Mirzapour)' },
       { name: 'DeCOFre (Loïc Grobol)' },
       { name: 'OFCORS (Théo Azzouza)' },
     ]

@@ -1,16 +1,17 @@
 <template>
   <div>
-    <AlgorithmsList />
+    <Navbar />
   </div>
 </template>
 
 <script>
   // import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-  import AlgorithmsList from "./components/AlgorithmsList.vue";
+  // import AlgorithmsList from "./components/AlgorithmsList.vue";
+  import Navbar from "./components/Navbar.vue";
 
   export default {
     components: {
-      AlgorithmsList,
+      Navbar,
     },
   };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-72 fixed top-16">
+  <div class="w-full fixed">
     <Listbox v-model="selectedPerson">
       <div class="relative mt-1">
         <ListboxButton
@@ -78,12 +78,9 @@ export default {
 
   setup() {
     const people = [
-      { name: 'Wade Cooper' },
-      { name: 'Arlene Mccoy' },
-      { name: 'Devon Webb' },
-      { name: 'Tom Cook' },
-      { name: 'Tanya Fox' },
-      { name: 'Hellen Schmidt' },
+      { name: 'French Coreference Resolution System (Mehdi Mirzapour)' },
+      { name: 'DeCOFre (Loïc Grobol)' },
+      { name: 'OFCORS (Théo Azzouza)' },
     ]
     const selectedPerson = ref(people[0])
 

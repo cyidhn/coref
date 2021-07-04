@@ -12,11 +12,11 @@
         </div>
     </div>
     <div class="mt-5 px-5 py-5 bg-black text-white text-lg text-center">
-        <a href="#" class="font-bold mx-3">Visualisation manuscrite</a> - 
-        <a href="#" class="mx-3">Visualisation colorique</a> - 
-        <a href="#" class="mx-3">Liste des mentions</a> - 
-        <a href="#" class="mx-3">Les paires</a> - 
-        <a href="#" class="mx-3">Les prédictions</a>
+        <a @click="callViz('man')" class="cursor-pointer mx-3">Visualisation manuscrite</a> - 
+        <a @click="callViz('col')" class="cursor-pointer mx-3">Visualisation colorique</a> - 
+        <a @click="callViz('men')" class="cursor-pointer mx-3">Liste des mentions</a> - 
+        <a @click="callViz('pai')" class="cursor-pointer mx-3">Les paires</a> - 
+        <a @click="callViz('pred')" class="cursor-pointer mx-3">Les prédictions</a>
     </div>
 </div>
 </template>
@@ -27,6 +27,13 @@ import AlgorithmsList from "./AlgorithmsList.vue";
 export default {
     components: {
       AlgorithmsList,
+    },
+
+    methods: {
+        callViz(n) {
+            this.$store.commit('changeMenu', n);
+            // console.log(this.$store.state.menu);
+        }
     },
 }
 </script>

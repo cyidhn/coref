@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="mt-8">
-            <input type="text" class="rounded-md p-2 h-12 focus:outline-none border-black border-2 w-full" />
+            <input type="text" v-model="search" class="rounded-md p-2 h-12 focus:outline-none border-black border-2 w-full" />
         </div>
     </div>
     <div class="mt-5 px-5 py-5 bg-black text-white text-lg text-center">
@@ -23,17 +23,42 @@
 
 <script>
 import AlgorithmsList from "./AlgorithmsList.vue";
+import _ from 'lodash';
 
 export default {
     components: {
       AlgorithmsList,
     },
 
+    data() {
+        return { 
+            search: "" 
+        }
+    },
+
+    watch: {
+        search: function () {
+            this.$store.commit('changeSearch', this.search);
+            if (this.search != "") {
+                this.$store.commit('load', true);
+                this.throttleMethod();
+            } else {
+                this.$store.commit('load', false);
+            }
+        },
+    },
+
     methods: {
         callViz(n) {
             this.$store.commit('changeMenu', n);
             // console.log(this.$store.state.menu);
-        }
+        },
+        throttleMethod: _.debounce(function () {
+            if (this.search != "") {
+                console.log('Throttle button clicked!');
+                this.$store.commit('load', false);
+            }
+        }, 2000)
     },
 }
 </script>

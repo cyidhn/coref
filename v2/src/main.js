@@ -17,8 +17,8 @@ const store = createStore({
         increment(state) {
             state.count++
         },
-        load(state) {
-            state.loading = !state.loading
+        load(state, n) {
+            state.loading = n
         },
         changeMenu(state, n) {
             state.menu = n

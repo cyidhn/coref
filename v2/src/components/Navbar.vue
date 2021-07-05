@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="p-5">
-        <div class=" grid grid-flow-col">
+        <div class="grid grid-flow-col">
             <div><h1 class="text-4xl font-bold"><a href="/">Co.Ref</a></h1></div>
             <div class="flex flex-col items-end justify-center">
                 <AlgorithmsList />

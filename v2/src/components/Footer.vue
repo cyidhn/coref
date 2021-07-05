@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="text-right text-xs mt-3">
-            <p>Interface hebergée par l'IDHN.</p>
+            <p>Interface hébergée par l'IDHN.</p>
             <p>Développée par @DemangeJeremy.</p>
         </div>
     </div>

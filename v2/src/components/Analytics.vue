@@ -9,6 +9,11 @@
         <div v-if="menuChange == 'man' && isSearching != '' && !isLoading">
             <p>Hello</p>
         </div>
+        <div v-if="menuChange == 'men' && isSearching != '' && !isLoading">
+            <div class="container py-10">
+                <img class="mx-auto" src="/img/exemple_mentions.png" height="100%" />
+            </div>
+        </div>
     </div>
 </template>
 

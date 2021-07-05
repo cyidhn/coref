@@ -6,7 +6,7 @@
         <div v-if="isLoading">
             <h2 class="text-center text-xl">Chargement en cours...</h2>
         </div>
-        <div v-if="menuChange == 'pred'">
+        <div v-if="menuChange == 'man' && isSearching != '' && !isLoading">
             <p>Hello</p>
         </div>
     </div>

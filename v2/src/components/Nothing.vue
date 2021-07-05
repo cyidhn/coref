@@ -1,7 +1,10 @@
 <template>
     <div>
-        <div class="text-center content-center flex flex-wrap">
-            <ExclamationIcon class="text-center w-32 h-32 text-red-500" aria-hidden="true" />
+        <div class="mt-20">
+            <ExclamationIcon class="mx-auto w-32 h-32 text-red-500" aria-hidden="true" />
+        </div>
+        <div class="mb-20">
+            <p class="text-center text-lg text-red-500">Écrivez un premier texte dans le formulaire en haut du menu pour l'analyser...</p>
         </div>
     </div>
 </template>

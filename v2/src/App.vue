@@ -2,9 +2,6 @@
   <div>
     <Navbar />
     <Analytics />
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
     <Footer />
   </div>
 </template>

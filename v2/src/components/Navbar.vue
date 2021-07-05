@@ -1,11 +1,13 @@
 <template>
 <div>
     <div class="p-5">
-        <div class="flex grid grid-cols-2">
+        <div class=" grid grid-flow-col">
             <div><h1 class="text-4xl font-bold"><a href="/">Co.Ref</a></h1></div>
-            <div class="justify-self-end">
+            <div class="flex flex-col items-end justify-center">
                 <AlgorithmsList />
             </div>
+            <!-- <br/><br/> -->
+            <!-- <AlgorithmsList /> -->
         </div>
         <div class="mt-8">
             <input type="text" v-model="search" class="rounded-md p-2 h-12 focus:outline-none border-black border-2 w-full" />
@@ -15,8 +17,8 @@
         <a @click="callViz('man')" class="cursor-pointer mx-3">Visualisation manuscrite</a> - 
         <!-- <a @click="callViz('col')" class="cursor-pointer mx-3">Visualisation colorée</a> -  -->
         <a @click="callViz('men')" class="cursor-pointer mx-3">Visualisation des mentions</a> - 
-        <a @click="callViz('pai')" class="cursor-pointer mx-3">Les paires</a> - 
-        <a @click="callViz('pred')" class="cursor-pointer mx-3">Les prédictions</a>
+        <!-- <a @click="callViz('pai')" class="cursor-pointer mx-3">Les paires</a> -  -->
+        <a @click="callViz('pred')" class="cursor-pointer mx-3">Les paires et les prédictions</a>
     </div>
 </div>
 </template>

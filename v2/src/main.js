@@ -7,16 +7,13 @@ import './style.css'
 const store = createStore({
     state() {
         return {
-            count: 0,
             menu: "man",
             loading: false,
-            search: ""
+            search: "",
+            algo: "crs"
         }
     },
     mutations: {
-        increment(state) {
-            state.count++
-        },
         load(state, n) {
             state.loading = n
         },
@@ -25,6 +22,9 @@ const store = createStore({
         },
         changeSearch(state, n) {
             state.search = n
+        },
+        changeAlgo(state, n) {
+            state.algo = n
         }
     },
     getters: {

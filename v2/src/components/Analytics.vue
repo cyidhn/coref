@@ -1,5 +1,5 @@
 <template>
-    <div class="my-10 mx-5">
+    <div class="my-10 mx-5 py-5">
         <div v-if="isSearching == '' && !isLoading">
             <Nothing />
         </div>

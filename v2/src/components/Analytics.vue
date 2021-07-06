@@ -96,8 +96,8 @@ export default {
         isResults: function () {
             // Mentions
             let texte = this.$store.state.search;
-            texte = texte.split(" ");
-            let mentions = "";
+            let texte2 = this.$store.state.search;
+            // let mentions = "";
             let truementions = [];
             this.isResults.data.forEach(ct => {
                 console.log(ct);
@@ -106,22 +106,30 @@ export default {
             });
             console.log(truementions);
 
+
             // Mentions create
-            texte.forEach(word => {
-                if (truementions.includes(word)) {
-                    mentions += `<span class="hover:opacity-100 opacity-60 underline">${word}</span> `;
-                } else {
-                    mentions += `<span class="opacity-60">${word}</span> `;
-                }
+            truementions.forEach(word => {
+                texte = texte.replace(word, `<span class="underline">${word}</span>`);
             });
-            this.fulltextmentions = mentions;
+            this.fulltextmentions = texte;
 
             // Manuscrit
-            let manuscit = "";
-            texte.forEach(word => {
-                manuscit += `<span class="hover:opacity-100 hover:underline opacity-60">${word}</span> `;
+            // let manuscit = "";
+            let loopI = 0;
+            let colors = ["bg-red-300", "bg-yellow-300", "bg-green-300", "bg-blue-300", "bg-pink-300"]
+            this.isResults.data.forEach(ct => {
+                if (ct.PREDICTION == 1 && loopI < 5) {
+                    texte2 = texte2.replace(ct.M1_CONTENT, `<span class="${colors[loopI]}">${ct.M1_CONTENT}</span>`);
+                    texte2 = texte2.replace(ct.M2_CONTENT, `<span class="${colors[loopI]}">${ct.M2_CONTENT}</span>`);
+                    loopI += 1;
+                }
             });
-            this.fullmanuscrit = manuscit;
+
+            if (loopI == 0) {
+                texte2 += `<br/><br/><p class="text-sm text-center ">(Aucune coréférence n'a été détectée)</p>`
+            }
+            
+            this.fullmanuscrit = texte2;
         },
     },
 

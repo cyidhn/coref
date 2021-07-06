@@ -15,10 +15,10 @@
     </div>
     <div class="mt-5 px-5 py-7 bg-black text-white text-lg text-center">
         <span v-if="menuChange == 'man'">
-            <a @click="callViz('man')" class="cursor-pointer mx-3 pb-2 border-b-2 border-white">Visualisation manuscrite</a> - 
+            <a @click="callViz('man')" class="cursor-pointer mx-3 pb-2 border-b-2 border-white">Visualisation des coréférences</a> - 
         </span>
         <span v-else>
-            <a @click="callViz('man')" class="cursor-pointer mx-3 pb-2">Visualisation manuscrite</a> - 
+            <a @click="callViz('man')" class="cursor-pointer mx-3 pb-2">Visualisation des coréférences</a> - 
         </span>
         <!-- <a @click="callViz('col')" class="cursor-pointer mx-3">Visualisation colorée</a> -  -->
         <span v-if="menuChange == 'men'">

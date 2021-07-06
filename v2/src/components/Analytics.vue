@@ -18,9 +18,9 @@
             </div>
         </div>
         <div v-if="menuChange == 'pred' && isSearching != '' && !isLoading">
-            <div class="py-10">
+            <div class="py-5">
             <div class="flex flex-row-reverse mb-5">
-                <a @click="download" class="py-2 px-4 cursor-pointer rounded-md bg-gray-100"><DownloadIcon class="w-5 h-5 pt-1 absolute" aria-hidden="true" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Télécharger le fichier source</a>
+                <a @click="download" class="hover:border-4 border-black border-2 py-2 px-4 cursor-pointer rounded-md bg-gray-100"><DownloadIcon class="w-5 h-5 pt-1 absolute" aria-hidden="true" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Télécharger le fichier source</a>
             </div>
             <div class="flex flex-col ">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

@@ -5,6 +5,7 @@
         </div>
         <div v-if="isLoading">
             <h2 class="text-center text-xl">Chargement en cours...</h2>
+            <p class="text-center text-sm">(peut prendre jusqu'à plusieurs minutes)</p>
         </div>
         <div v-if="menuChange == 'man' && isSearching != '' && !isLoading">
             <p>Hello</p>

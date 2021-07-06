@@ -40,6 +40,9 @@ const store = createStore({
         },
         viewSearch(state) {
             return state.search
+        },
+        viewResults(state) {
+            return state.result
         }
     }
 })

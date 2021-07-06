@@ -10,7 +10,7 @@
             <!-- <AlgorithmsList /> -->
         </div>
         <div class="mt-8">
-            <input placeholder="Écrivez votre texte ici..." type="text" v-model="search" class="placeholder-gray-500 rounded-md p-2 h-12 focus:outline-none border-black border-2 w-full" />
+            <textarea placeholder="Écrivez votre texte ici..." type="text" v-model="search" class="placeholder-gray-500 rounded-md p-2 h-12 focus:h-24 focus:outline-none border-black border-2 w-full" />
         </div>
     </div>
     <div class="mt-5 px-5 py-7 bg-black text-white text-lg text-center">
@@ -50,7 +50,8 @@ export default {
 
     data() {
         return { 
-            search: "" 
+            search: "",
+            largeinput: false
         }
     },
 
@@ -73,6 +74,9 @@ export default {
     },
 
     methods: {
+        clicinput() {
+            this.largeinput = !this.largeinput;
+        },
         callViz(n) {
             this.$store.commit('changeMenu', n);
             // console.log(this.$store.state.menu);

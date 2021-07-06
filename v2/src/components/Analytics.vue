@@ -9,12 +9,12 @@
         </div>
         <div v-if="menuChange == 'man' && isSearching != '' && !isLoading">
             <div class="container py-10">
-                <div class="text-center text-3xl" v-html="fulltextmentions"></div>
+                <div class="text-center text-3xl cursor-default" v-html="fullmanuscrit"></div>
             </div>
         </div>
         <div v-if="menuChange == 'men' && isSearching != '' && !isLoading">
             <div class="container py-10">
-                <div class="text-center text-3xl" v-html="fulltextmentions"></div>
+                <div class="text-center text-3xl cursor-default" v-html="fulltextmentions"></div>
             </div>
         </div>
         <div v-if="menuChange == 'pred' && isSearching != '' && !isLoading">
@@ -82,7 +82,8 @@ export default {
 
     data() {
         return { 
-            fulltextmentions: ''
+            fulltextmentions: '',
+            fullmanuscrit: ''
         }
     },
 
@@ -95,21 +96,27 @@ export default {
             let truementions = [];
             this.isResults.data.forEach(ct => {
                 console.log(ct);
-                truementions.push(ct.M1_CONTENT.replace(" ", ""));
-                truementions.push(ct.M2_CONTENT.replace(" ", ""));
+                truementions.push(ct.M1_CONTENT);
+                truementions.push(ct.M2_CONTENT);
             });
             console.log(truementions);
 
             // Mentions create
             texte.forEach(word => {
                 if (truementions.includes(word)) {
-                    mentions += `<span class="underline">${word}</span> `;
+                    mentions += `<span class="hover:opacity-100 opacity-60 underline">${word}</span> `;
                 } else {
-                    mentions += `${word} `;
+                    mentions += `<span class="opacity-60">${word}</span> `;
                 }
             });
             this.fulltextmentions = mentions;
 
+            // Manuscrit
+            let manuscit = "";
+            texte.forEach(word => {
+                manuscit += `<span class="hover:opacity-100 hover:underline opacity-60">${word}</span> `;
+            });
+            this.fullmanuscrit = manuscit;
         },
     },
 

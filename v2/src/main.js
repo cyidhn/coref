@@ -10,12 +10,16 @@ const store = createStore({
             menu: "man",
             loading: false,
             search: "",
-            algo: "crs"
+            algo: "crs",
+            result: {}
         }
     },
     mutations: {
         load(state, n) {
             state.loading = n
+        },
+        changeResults(state, n) {
+            state.result = n
         },
         changeMenu(state, n) {
             state.menu = n

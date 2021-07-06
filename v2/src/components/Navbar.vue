@@ -41,6 +41,7 @@
 <script>
 import AlgorithmsList from "./AlgorithmsList.vue";
 import _ from 'lodash';
+import axios from "axios";
 
 export default {
     components: {
@@ -78,8 +79,20 @@ export default {
         },
         throttleMethod: _.debounce(function () {
             if (this.search != "") {
-                console.log('Throttle button clicked!');
-                this.$store.commit('load', false);
+                let formData = new FormData();
+                formData.append("text", this.search);
+                axios
+					.post(process.env.VUE_APP_API + "/ofcors", formData)
+                    .then((response) => {
+						console.log(response.data);
+						this.$store.commit('changeResults', response.data);
+						this.$store.commit('load', false);
+                    })
+                    .catch((e) => {
+						console.error("Impossible de charger les données", e);
+						alert("Erreur. Impossible de lancer l'algorithme");
+						this.$store.commit('load', false);
+					});
             }
         }, 2000)
     },

@@ -5,7 +5,7 @@
                 <img alt="Logo de CY IDHN" width="120" src="@/assets/idhn.jpeg" />
             </a>
         </div>
-        <div class="text-right text-xs mt-3">
+        <div class="text-right text-xs mt-5">
             <p>Interface hébergée par l'IDHN.</p>
             <p>Développée par @DemangeJeremy.</p>
         </div>

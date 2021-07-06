@@ -78,9 +78,9 @@ export default {
 
   setup() {
     const people = [
-      { name: 'French-CRS (Mehdi Mirzapour)' },
-      { name: 'DeCOFre (Loïc Grobol)' },
-      { name: 'OFCORS (Théo Azzouza)' },
+      { name: 'OFCORS (Théo Azzouza)', available: true },
+      { name: 'French-CRS (Mehdi Mirzapour)', available: false },
+      { name: 'DeCOFre (Loïc Grobol)', available: false },
     ]
     const selectedPerson = ref(people[0])
 

@@ -18,7 +18,10 @@
             </div>
         </div>
         <div v-if="menuChange == 'pred' && isSearching != '' && !isLoading">
-            <div class="container py-10">
+            <div class="py-10">
+            <div class="flex flex-row-reverse mb-5">
+                <a @click="download" class="py-2 px-4 cursor-pointer rounded-md bg-gray-100"><DownloadIcon class="w-5 h-5 pt-1 absolute" aria-hidden="true" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Télécharger le fichier source</a>
+            </div>
             <div class="flex flex-col ">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -74,10 +77,12 @@
 
 <script>
 import Nothing from "./Nothing.vue";
+import { DownloadIcon } from '@heroicons/vue/solid'
 
 export default {
     components: {
-        Nothing
+        Nothing,
+        DownloadIcon
     },
 
     data() {
@@ -117,6 +122,27 @@ export default {
                 manuscit += `<span class="hover:opacity-100 hover:underline opacity-60">${word}</span> `;
             });
             this.fullmanuscrit = manuscit;
+        },
+    },
+
+    methods: {
+        generateDownload(filename, text) {
+            var element = document.createElement("a");
+            element.setAttribute(
+                "href",
+                "data:json/plain;charset=utf-8," + encodeURIComponent(text)
+            );
+            element.setAttribute("download", filename);
+
+            element.style.display = "none";
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+		},
+        download() {
+            this.generateDownload("coref.json", JSON.stringify(this.isResults.data));
         },
     },
 

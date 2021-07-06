@@ -8,16 +8,18 @@
             <p class="text-center text-sm">(peut prendre jusqu'à plusieurs minutes)</p>
         </div>
         <div v-if="menuChange == 'man' && isSearching != '' && !isLoading">
-            <p>Hello</p>
+            <div class="container py-10">
+                <div class="text-center text-3xl" v-html="fulltextmentions"></div>
+            </div>
         </div>
         <div v-if="menuChange == 'men' && isSearching != '' && !isLoading">
             <div class="container py-10">
-                <img class="mx-auto" src="/img/exemple_mentions.png" height="100%" />
+                <div class="text-center text-3xl" v-html="fulltextmentions"></div>
             </div>
         </div>
         <div v-if="menuChange == 'pred' && isSearching != '' && !isLoading">
             <div class="container py-10">
-            <div class="flex flex-col">
+            <div class="flex flex-col ">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -42,7 +44,7 @@
                         </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                        <tr  v-for="(ct, i) in isResults.data" :key="i">
+                        <tr v-for="(ct, i) in isResults.data" :key="i">
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 {{i}}
                             </td>
@@ -77,6 +79,40 @@ export default {
     components: {
         Nothing
     },
+
+    data() {
+        return { 
+            fulltextmentions: ''
+        }
+    },
+
+    watch: {
+        isResults: function () {
+            // Mentions
+            let texte = this.$store.state.search;
+            texte = texte.split(" ");
+            let mentions = "";
+            let truementions = [];
+            this.isResults.data.forEach(ct => {
+                console.log(ct);
+                truementions.push(ct.M1_CONTENT.replace(" ", ""));
+                truementions.push(ct.M2_CONTENT.replace(" ", ""));
+            });
+            console.log(truementions);
+
+            // Mentions create
+            texte.forEach(word => {
+                if (truementions.includes(word)) {
+                    mentions += `<span class="underline">${word}</span> `;
+                } else {
+                    mentions += `${word} `;
+                }
+            });
+            this.fulltextmentions = mentions;
+
+        },
+    },
+
 
     computed: {
         menuChange() {

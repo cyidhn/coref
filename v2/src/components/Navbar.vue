@@ -10,7 +10,7 @@
             <!-- <AlgorithmsList /> -->
         </div>
         <div class="mt-8">
-            <textarea placeholder="Écrivez votre texte ici..." type="text" v-model="search" class="placeholder-gray-500 rounded-md p-2 h-12 focus:h-24 focus:outline-none border-black border-2 w-full" />
+            <input placeholder="Écrivez votre texte ici..." type="text" v-model="search" class="placeholder-gray-500 rounded-md p-2 h-12 focus:outline-none border-black border-2 w-full" />
         </div>
     </div>
     <div class="mt-5 px-5 py-7 bg-black text-white text-lg text-center">

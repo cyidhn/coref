@@ -10,7 +10,7 @@ const store = createStore({
             menu: "man",
             loading: false,
             search: "",
-            algo: "crs",
+            algo: "OFCORS (Théo Azzouza)",
             result: {}
         }
     },

@@ -129,7 +129,7 @@ export default {
     const people = [
       { name: "OFCORS (Théo Azzouza)", available: true },
       // { name: 'French-CRS (Mehdi Mirzapour)', available: false },
-      { name: "DeCOFre (Loïc Grobol)", available: false },
+      { name: "DeCOFre (Loïc Grobol)", available: true },
     ];
     const selectedPerson = ref(people[0]);
 
@@ -137,6 +137,12 @@ export default {
       people,
       selectedPerson,
     };
+  },
+
+  watch: {
+    selectedPerson: function (val) {
+      this.$store.commit("changeAlgo", val.name);
+    },
   },
 };
 </script>

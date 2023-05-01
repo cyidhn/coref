@@ -1,5 +1,5 @@
 excel2json-3==0.1.6
-Flask==1.1.2
+Flask==2.3.2
 # Flask==3.0.10
 chardet==4.0.0
 scikit-learn
